@@ -5,9 +5,9 @@ from struct import unpack
 from zlib import decompress
 
 try:
-    from configparser import SafeConfigParser
+    from configparser import ConfigParser
 except:
-    from ConfigParser import SafeConfigParser
+    from ConfigParser import ConfigParser
 
 try:
     import __builtin__
