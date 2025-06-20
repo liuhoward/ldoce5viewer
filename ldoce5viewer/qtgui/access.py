@@ -1,6 +1,6 @@
 """application-specific URI scheme handler for QtWebKit"""
 
-import imp
+
 import os.path
 import sys
 import traceback
@@ -32,9 +32,7 @@ def _load_static_data(filename):
     if filename in _static_cache:
         return _static_cache[filename]
 
-    is_frozen = hasattr(sys, "frozen") or imp.is_frozen(  # new py2exe
-        "__main__"
-    )  # tools/freeze
+    is_frozen = hasattr(sys, "frozen")
 
     if is_frozen:
         if sys.platform.startswith("darwin"):
